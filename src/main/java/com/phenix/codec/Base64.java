@@ -455,7 +455,7 @@ public class Base64 {
             byte[] destination, int destOffset, int options) {
         byte[] ALPHABET = getAlphabet(options);
 
-        //           1         2         3  
+        //           1         2         3
         // 01234567890123456789012345678901 Bit position
         // --------000000001111111122222222 Array position from threeBytes
         // --------|    ||    ||    ||    | Six bit groups to index ALPHABET
@@ -725,7 +725,7 @@ public class Base64 {
             int len43 = len * 4 / 3;
             byte[] outBuff = new byte[(len43) // Main 4:3
                     + ((len % 3) > 0 ? 4 : 0) // Account for padding
-                    + (breakLines ? (len43 / MAX_LINE_LENGTH) : 0)]; // New lines      
+                    + (breakLines ? (len43 / MAX_LINE_LENGTH) : 0)]; // New lines
             int d = 0;
             int e = 0;
             int len2 = len - 2;
@@ -886,7 +886,7 @@ public class Base64 {
             else {
                 System.err.println("Bad Base64 input character at " + i + ": " + source[i] + "(decimal)");
                 return null;
-            }   // end else: 
+            }   // end else:
         }   // each input character
 
         byte[] out = new byte[outBuffPosn];
@@ -1396,7 +1396,7 @@ public class Base64 {
                     else {
                         // Must have broken out from above.
                         throw new java.io.IOException("Improperly padded Base64 input.");
-                    }   // end 
+                    }   // end
 
                 }   // end else: decode
             }   // end else: get data
